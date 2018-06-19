@@ -1,0 +1,6 @@
+module Pods_ScrollViewScreenShootsDemo {
+  umbrella header "Pods-ScrollViewScreenShootsDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
