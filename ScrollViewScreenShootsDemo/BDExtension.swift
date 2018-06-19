@@ -24,7 +24,7 @@ extension UIScrollView {
         scrollviewFrame = scrollView.frame
         UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, true, UIScreen.main.scale)
         //由于每次wkwebView内存优化的原因，每次加载的web页面，只会预先加载一屏多一点的html，所以无法像UIWebView那样直接通过获取全文大小使用renderInContext方法直接保存为长途，所以使用滚动+延时+绘制的方式将web页面保存为长图
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             bd_getScreenshots(scrollView: scrollView, page: page, index: index, scrollFrame: scrollviewFrame)
         }
     }
@@ -40,6 +40,7 @@ func bd_getScreenshots(scrollView:UIScrollView, page:Int, index:Int, scrollFrame
             if index + 1 == page {
                 let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
                 UIGraphicsEndImageContext()
+                scrollView.superview?.frame = scrollFrame
                 scrollView.frame = scrollFrame
                 scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: scrollView.frame.size.width, height: scrollFrame.size.height), animated: true)
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -48,15 +49,16 @@ func bd_getScreenshots(scrollView:UIScrollView, page:Int, index:Int, scrollFrame
     } else {
         if scrollView.drawHierarchy(in: CGRect(x: 0, y: CGFloat(index) * scrollView.frame.size.height, width: scrollView.frame.size.width, height: scrollView.frame.size.height), afterScreenUpdates: true) {
             if (index + 2) == page {
-                let lastPageHeight = scrollView.contentSize.height - CGFloat(index) * scrollView.frame.size.height
+                let lastPageHeight = scrollView.contentSize.height - CGFloat(index + 1) * scrollView.frame.size.height
                 let changeFrame:CGRect = CGRect(x: scrollView.frame.origin.x, y: scrollView.frame.origin.y, width: scrollView.frame.size.width, height: lastPageHeight)
+                scrollView.superview?.frame = changeFrame
                 scrollView.frame = changeFrame
-                scrollView.scrollRectToVisible(CGRect(x: 0, y: CGFloat(index) * scrollFrame.size.height, width: scrollView.frame.size.width, height: scrollFrame.size.height), animated: false)
+                scrollView.scrollRectToVisible(CGRect(x: 0, y: CGFloat(index + 1) * scrollFrame.size.height, width: scrollView.frame.size.width, height: scrollView.frame.size.height), animated: false)
             } else {
-                scrollView.scrollRectToVisible(CGRect(x: 0, y: CGFloat(index) * scrollView.frame.size.height, width: scrollView.frame.size.width, height: scrollView.frame.size.height), animated: false)
+                scrollView.scrollRectToVisible(CGRect(x: 0, y: CGFloat(index + 1) * scrollView.frame.size.height, width: scrollView.frame.size.width, height: scrollView.frame.size.height), animated: false)
             }
         }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5)  {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1)  {
             print("asyncAfter index ---- %d",index)
             bd_getScreenshots(scrollView: scrollView, page: page, index: index + 1, scrollFrame: scrollFrame)
         }
