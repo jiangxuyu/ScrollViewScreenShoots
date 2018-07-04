@@ -12,8 +12,6 @@
 		D306D96E20C50AB5002ABCB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D306D96C20C50AB5002ABCB6 /* Main.storyboard */; };
 		D306D97020C50AB8002ABCB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D306D96F20C50AB8002ABCB6 /* Assets.xcassets */; };
 		D306D97320C50AB8002ABCB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D306D97120C50AB8002ABCB6 /* LaunchScreen.storyboard */; };
-		D306D97E20C50AB8002ABCB6 /* ScrollViewScreenShootsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306D97D20C50AB8002ABCB6 /* ScrollViewScreenShootsDemoTests.swift */; };
-		D306D98920C50AB8002ABCB6 /* ScrollViewScreenShootsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306D98820C50AB8002ABCB6 /* ScrollViewScreenShootsDemoUITests.swift */; };
 		D306D99720C50AE2002ABCB6 /* BDExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306D99620C50AE1002ABCB6 /* BDExtension.swift */; };
 		D306D99920C50D9B002ABCB6 /* libSnapKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D306D99820C50D9B002ABCB6 /* libSnapKit.a */; };
 		FACD64E110BFEAF89E54ED02 /* libPods-ScrollViewScreenShootsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBF79E0EB626FC468BE2A67 /* libPods-ScrollViewScreenShootsDemo.a */; };
@@ -48,11 +46,7 @@
 		D306D97220C50AB8002ABCB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D306D97420C50AB8002ABCB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D306D97920C50AB8002ABCB6 /* ScrollViewScreenShootsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollViewScreenShootsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D306D97D20C50AB8002ABCB6 /* ScrollViewScreenShootsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewScreenShootsDemoTests.swift; sourceTree = "<group>"; };
-		D306D97F20C50AB8002ABCB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D306D98420C50AB8002ABCB6 /* ScrollViewScreenShootsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollViewScreenShootsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D306D98820C50AB8002ABCB6 /* ScrollViewScreenShootsDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewScreenShootsDemoUITests.swift; sourceTree = "<group>"; };
-		D306D98A20C50AB8002ABCB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D306D99620C50AE1002ABCB6 /* BDExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDExtension.swift; sourceTree = "<group>"; };
 		D306D99820C50D9B002ABCB6 /* libSnapKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSnapKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,8 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				D306D96720C50AB5002ABCB6 /* ScrollViewScreenShootsDemo */,
-				D306D97C20C50AB8002ABCB6 /* ScrollViewScreenShootsDemoTests */,
-				D306D98720C50AB8002ABCB6 /* ScrollViewScreenShootsDemoUITests */,
 				D306D96620C50AB5002ABCB6 /* Products */,
 				A404584616CC7F4579EB2AE6 /* Pods */,
 				8DCD6C4529E72DFC92BA14A3 /* Frameworks */,
@@ -136,24 +128,6 @@
 				D306D97420C50AB8002ABCB6 /* Info.plist */,
 			);
 			path = ScrollViewScreenShootsDemo;
-			sourceTree = "<group>";
-		};
-		D306D97C20C50AB8002ABCB6 /* ScrollViewScreenShootsDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				D306D97D20C50AB8002ABCB6 /* ScrollViewScreenShootsDemoTests.swift */,
-				D306D97F20C50AB8002ABCB6 /* Info.plist */,
-			);
-			path = ScrollViewScreenShootsDemoTests;
-			sourceTree = "<group>";
-		};
-		D306D98720C50AB8002ABCB6 /* ScrollViewScreenShootsDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D306D98820C50AB8002ABCB6 /* ScrollViewScreenShootsDemoUITests.swift */,
-				D306D98A20C50AB8002ABCB6 /* Info.plist */,
-			);
-			path = ScrollViewScreenShootsDemoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D306D97E20C50AB8002ABCB6 /* ScrollViewScreenShootsDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +300,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D306D98920C50AB8002ABCB6 /* ScrollViewScreenShootsDemoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
